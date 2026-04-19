@@ -1,0 +1,46 @@
+#include <stdio.h> 
+#include <string.h>
+// Structure definition 
+struct StudentStruct {
+char name[20]; 
+int roll;
+float marks;
+};
+// Union definition 
+union StudentUnion {
+char name[20]; 
+int roll;
+float marks;
+};
+int main() {
+struct StudentStruct s1; 
+union StudentUnion u1;
+// Structure data input
+printf("Enter details for Structure:\n"); 
+printf("Enter Name: ");
+scanf("%s", s1.name); 
+printf("Enter Roll Number: "); 
+scanf("%d", &s1.roll); 
+printf("Enter Marks: "); 
+scanf("%f", &s1.marks);
+// Display structure data 
+printf("\nStructure Data:\n"); 
+printf("Name: %s\n", s1.name); 
+printf("Roll Number: %d\n", s1.roll); 
+printf("Marks: %.2f\n", s1.marks);
+// Union data input
+printf("\nEnter details for Union:\n"); 
+printf("Enter Name: ");
+scanf("%s", u1.name);
+printf("Name from Union: %s\n", u1.name); 
+printf("Enter Roll Number: ");
+scanf("%d", &u1.roll);
+printf("Roll Number from Union: %d\n", u1.roll); 
+printf("Enter Marks: ");
+scanf("%f", &u1.marks);
+printf("Marks from Union: %.2f\n", u1.marks);
+// Display memory sizes
+printf("\nSize of Structure: %lu bytes", sizeof(s1)); 
+printf("\nSize of Union: %lu bytes\n", sizeof(u1)); 
+return 0;
+}
